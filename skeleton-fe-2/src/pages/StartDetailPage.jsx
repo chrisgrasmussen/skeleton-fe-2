@@ -6,7 +6,7 @@ const StartDetailPage = () => {
     const { startDetail, completeList, fetchStartDetail, fetchCompleteList } = useContext(FetchContext)
     const { ids } = useParams()
 
-    useEffect((id) => {
+    useEffect(() => {
         fetchStartDetail(ids)
         fetchCompleteList(ids)
     }, [ids])
