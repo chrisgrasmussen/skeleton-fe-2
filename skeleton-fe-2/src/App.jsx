@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import './index.css'
 
@@ -13,7 +12,7 @@ function App() {
     <Routes>
       <Route path="/" exact element={<HomePage />} />
       <Route path="/start" element={<ConversationsPage />} />
-      <Route path="/start/:id" element={<StartDetailPage />} />
+      <Route path="/start/:ids" element={<StartDetailPage />} />
       <Route path="/start/:ids/complete/:idc" element={<CompleteDetailPage />} />
     </Routes>
   )
