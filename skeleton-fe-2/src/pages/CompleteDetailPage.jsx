@@ -1,23 +1,15 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { FetchContext } from '../context/FetchContext'
 import { useParams, Link } from 'react-router-dom'
+import Heading from '../components/completeDetail/Heading.jsx'
+import Body from '../components/completeDetail/Body.jsx'
 
 const CompleteDetailPage = () => {
-    const { fetchStartDetail, fetchCompleteDetail, completeDetail } = useContext(FetchContext)
-    const { ids, idc } = useParams()
-
-    useEffect(() => {
-        fetchStartDetail(ids, idc)
-        fetchCompleteDetail(ids, idc)
-
-    }, [ids, idc])
 
     return (
-        <div>
-            Complete Detail Page
-            <h1>{completeDetail.body}</h1>
-            <h3>{completeDetail.start}</h3>
-
+        <div className="flex flex-col h-screen justify-center items-center">
+            <Heading />
+            <Body />
         </div>
     )
 }

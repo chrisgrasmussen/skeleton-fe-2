@@ -11,7 +11,7 @@ createRoot(document.getElementById('root')).render(
     <FetchContextProvider>
       <BrowserRouter>
         <App />
-      </BrowserRouter>,
+      </BrowserRouter>
     </FetchContextProvider>
-  </StrictMode>,
+  </StrictMode>
 )
