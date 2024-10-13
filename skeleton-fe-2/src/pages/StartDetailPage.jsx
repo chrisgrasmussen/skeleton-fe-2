@@ -3,7 +3,7 @@ import { FetchContext } from '../context/FetchContext'
 import { useParams, Link } from 'react-router-dom'
 import Heading from '../components/startDetail/Heading.jsx'
 import Body from '../components/startDetail/Body.jsx'
-import Input from '../components/startDetail/Input.jsx'
+
 
 const StartDetailPage = () => {
     const { startDetail, completeList, fetchStartDetail, fetchCompleteList } = useContext(FetchContext)

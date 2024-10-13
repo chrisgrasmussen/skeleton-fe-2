@@ -54,8 +54,18 @@ const PostContextProvider = ({ children }) => {
             });
     };
 
+    const deleteStart = (id) => {
+        axios.delete(`https://skeleton-a70q.onrender.com/api/start/${id}/`)
+            .then(response => {
+                console.log('Delete successful:', response.data);
+            })
+            .catch(error => {
+                console.error('Error deleting data:', error);
+            });
+    }
 
-    return (<PostContext.Provider value={{ createStart, createComplete, editStart }}>
+
+    return (<PostContext.Provider value={{ createStart, createComplete, editStart, deleteStart }}>
         {children}
     </PostContext.Provider>
     )

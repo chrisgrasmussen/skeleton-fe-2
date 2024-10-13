@@ -1,14 +1,22 @@
 import React, { useContext } from 'react'
 import { FetchContext } from '../../context/FetchContext'
+import { PostContext } from '../../context/PostContext'
 import { useNavigate } from 'react-router-dom'
 
 const Card = () => {
     const { startList, fetchStartDetail, setStartId } = useContext(FetchContext)
+    const { deleteStart } = useContext(PostContext)
+
     const navigate = useNavigate()
 
     const handleClick = (id) => {
         setStartId(id)
         fetchStartDetail(id)
+        navigate(`/start/${id}`)
+    }
+
+    const handleDeleteClick = (id) => {
+        deleteStart(id)
         navigate(`/start/${id}`)
     }
 
@@ -20,9 +28,15 @@ const Card = () => {
                         <div className="text-lg py-3 " key={start.id}>
                             {start.title}
                         </div>
-                        <button className="bg-indigo-400 hover:bg-indigo-500 text-white text-xs rounded-lg px-4 py-1">
-                            See More Details
-                        </button>
+                        <div className='flex justify-between items-center w-[130px]'>
+                            <button className="bg-indigo-400 hover:bg-indigo-500 text-white text-xs rounded-lg px-4 py-1">
+                                View
+                            </button>
+                            <button onClick={handleDeleteClick(start.id)} className="bg-red-400 hover:bg-red-500 text-white text-xs rounded-lg px-4 py-1">
+                                Delete
+                            </button>
+                        </div>
+
                     </div>
                 ))
             }
