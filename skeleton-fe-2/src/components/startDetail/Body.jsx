@@ -30,9 +30,9 @@ const Body = () => {
 
     return (
         <div className='flex flex-col items-center'>
-            <div className='flex flex-row justify-between items-center'>
-                <input onChange={handleChange} className=" justify-center w-[500px] text-2xl pl-5 pb-5" placeholder={startDetail.title} />
-                <button onClick={handleClick} className='bg-yellow-100 h-10 px-4 py-1 rounded-xl'>Edit</button>
+            <div className='flex w-[600px] border rounded-xl p-4 justify-between items-center'>
+                <input onChange={handleChange} className="w-[500px] text-2xl pl-5 py-1" placeholder={startDetail.title} />
+                <button onClick={handleClick} className='bg-yellow-100 h-10 px-4 py-1 text-sm rounded-xl'>Save</button>
             </div>
             <Input />
             {
@@ -41,7 +41,10 @@ const Body = () => {
                         <div>
                             <div className="flex flex-col border rounded-lg justify-center items-center py-4 w-[600px] pr-5">
                                 <p className='pb-2'>{complete.body}</p>
-                                <button className="bg-indigo-400 hover:bg-indigo-500 text-white text-xs rounded-2xl px-4 py-1">See Details</button>
+                                <div className="flex w-[150px] justify-around">
+                                    <button className="bg-indigo-400 hover:bg-indigo-500 text-white text-xs rounded-2xl px-4 py-1">View</button>
+                                    <button className="bg-red-400 hover:bg-red-500 text-white text-xs rounded-2xl px-4 py-1">Delete</button>
+                                </div>
                             </div>
                         </div>
                     </Link>
